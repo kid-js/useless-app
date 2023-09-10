@@ -1,0 +1,1075 @@
+/* * * * * * * /
+ * Imports
+* * * * * * * */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap');
+
+/* * * * * * * /
+ *
+ * Reset & Normalize CSS
+ *
+* * * * * * * */
+
+:root {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:active {
+    outline: 0;
+}
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+:where(ul, ol):where([class]) {
+    padding-left: 0;
+}
+
+:where(h1, h2, h3, p, ul, ol):where([class]) {
+    margin-block: 0;
+}
+
+:where(ul[class]) {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+textarea,
+select,
+label,
+button {
+    font: inherit;
+    border: 0;
+    outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* * * * * * * * * * * * * /
+ *
+ * Custom CSS starts here
+ *
+* * * * * * * * * * * * * */
+
+/* * * * * * * * * * /
+ * Basic CSS Styles
+* * * * * * * * * * */
+
+:root {
+    --dark: #3a3a3a;
+    --light: whitesmoke;
+    --btn-font: #FFF;
+
+    --btn-primary: #07883d;
+    --btn-second: #fd993b;
+    --btn-danger: #D32F2F;
+
+    --btn-primary-hover: #0ea14c;
+    --btn-second-hover: #fca85a;
+    --btn-danger-hover: #e64a4a;
+
+    --btn-primary-active: #0b7035;
+    --btn-second-active: #fc8d25;
+    --btn-danger-active: #cf2020;
+
+    --special: #FF5722;
+    --scene: #00796B;
+    --dialog: #3F51B5;
+    --switch: #7B1FA2;
+
+    --special-bg: rgba(255, 87, 34, 0.1);
+    --scene-bg: rgba(0, 121, 107, 0.1);
+    --dialog-bg: rgba(63, 81, 181, 0.1);
+    --switch-bg: rgba(123, 31, 162, 0.1);
+
+    --special-radio-bg: rgba(255, 87, 34, 0.2);
+    --scene-radio-bg: rgba(0, 121, 107, 0.2);
+    --dialog-radio-bg: rgba(63, 81, 181, 0.2);
+    --switch-radio-bg: rgba(123, 31, 162, 0.2);
+
+    --special-radio-checked: rgba(255, 87, 34, 0.25);
+    --scene-radio-checked: rgba(0, 121, 107, 0.25);
+    --dialog-radio-checked: rgba(63, 81, 181, 0.25);
+    --switch-radio-checked: rgba(123, 31, 162, 0.25);
+
+    --special-radio-hover: rgba(255, 87, 34, 0.15);
+    --scene-radio-hover: rgba(0, 121, 107, 0.15);
+    --dialog-radio-hover: rgba(63, 81, 181, 0.15);
+    --switch-radio-hover: rgba(123, 31, 162, 0.15);
+
+    --special-shadow: rgba(255, 87, 34, 0.75);
+    --scene-shadow: rgba(0, 121, 107, 0.75);
+    --dialog-shadow: rgba(63, 81, 181, 0.75);
+    --switch-shadow: rgba(123, 31, 162, 0.75);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
+body {
+    color: var(--dark);
+    font-family: 'Nunito', sans-serif;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.44;
+    background: #fffefd;
+}
+
+a {
+    color: #999;
+    transition: all 0.16s;
+}
+
+a:hover {
+    color: #808080;
+}
+
+button,
+input,
+textarea,
+label {
+    color: var(--dark);
+    font-size: 17px;
+    padding: 12px 16px;
+
+    border-bottom: 5px solid #ccc;
+    border-radius: 2px;
+    
+    background-color: #f7f6f6;
+    transition: all ease 0.16s;
+}
+
+input[type="text"],
+textarea {
+    border-radius: 2px 2px 0 0;
+}
+
+label {
+    background-color: transparent;
+}
+
+button,
+label,
+.to-top {
+    cursor: pointer;
+}
+
+input:focus,
+textarea:focus {
+    border-bottom: 5px solid #9ecfd5;
+    background-color: rgba(240, 245, 246, 0.8);
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+    color: #969696;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.main {
+    display: flex;
+    max-width: 1276px;
+    padding: 0 20px;
+    margin: 20px auto;
+    gap: 40px;
+}
+
+/* * * * * * * * * * * * * * * /
+ * First section - Panel CSS
+* * * * * * * * * * * * * * * */
+
+.panel {
+    flex-basis: 336px;
+    align-self: flex-start;
+    position: sticky;
+    top: 20px;
+    overflow: auto;
+}
+
+.panel-section,
+.episode-form__buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.episode-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input-label {
+    font-size: 16px;
+    align-self: flex-start;
+    padding: 8px 16px;
+    border: 0;
+
+    position: relative;
+    top: -6px;
+    opacity: 1;
+    visibility: visible;
+}
+
+::placeholder,
+.form-input-label {
+    color: #707070;
+    transition: all 0.16s;
+}
+
+input:placeholder-shown + .form-input-label,
+textarea:placeholder-shown + .form-input-label {
+    top: -32px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.episode-form__radio-inputs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    margin: 4px 0 36px;
+}
+
+.radio-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 8px 12px;
+    border: 2px solid transparent;
+    transition: background-color 0.16s;
+}
+
+label#special-label {
+    background-color: var(--special-radio-bg);
+}
+
+label#scene-label {
+    background-color: var(--scene-radio-bg);
+}
+
+label#dialog-label {
+    background-color: var(--dialog-radio-bg);
+}
+
+label#switch-label {
+    background-color: var(--switch-radio-bg);
+}
+
+input:checked + #special-label {
+    border: 2px solid var(--special);
+    box-shadow: 0 0 3px var(--special-shadow);
+}
+
+input:checked + #scene-label {
+    border: 2px solid var(--scene);
+    box-shadow: 0 0 3px var(--scene-shadow);
+}
+
+input:checked + #dialog-label {
+    border: 2px solid var(--dialog);
+    box-shadow: 0 0 3px var(--dialog-shadow);
+}
+
+input:checked + #switch-label {
+    border: 2px solid var(--switch);
+    box-shadow: 0 0 3px var(--switch-shadow);
+}
+
+label#special-label:hover {
+    background-color: var(--special-radio-hover);
+}
+
+label#scene-label:hover {
+    background-color: var(--scene-radio-hover);
+}
+
+label#dialog-label:hover {
+    background-color: var(--dialog-radio-hover);
+}
+
+label#switch-label:hover {
+    background-color: var(--switch-radio-hover);
+}
+
+input:checked + #special-label,
+input:checked + #special-label:hover {
+    background-color: var(--special-radio-checked);
+}
+
+input:checked + #scene-label,
+input:checked + #scene-label:hover {
+    background-color: var(--scene-radio-checked);
+}
+
+input:checked + #dialog-label,
+input:checked + #dialog-label:hover {
+    background-color: var(--dialog-radio-checked);
+}
+
+input:checked + #switch-label,
+input:checked + #switch-label:hover {
+    background-color: var(--switch-radio-checked);
+}
+
+/* * * * * * * * * * * * * * * * * * * /
+ * Second section - Episodes list CSS
+* * * * * * * * * * * * * * * * * * * */
+
+.episode {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 12px;
+}
+
+.episode__body {
+    flex-basis: 660px;
+    border-left: 12px solid;
+}
+
+.episode__body,
+.episode__time {
+    padding: 8px 16px;
+}
+
+.episode__p.margin-bottom-16 {
+    margin-bottom: 16px;
+}
+
+.episode__time {
+    flex-basis: 108px;
+}
+
+.special {
+    border-color: var(--special);
+    background-color: var(--special-bg);
+}
+
+.scene {
+    border-color: var(--scene);
+    background-color: var(--scene-bg);
+}
+
+.dialog {
+    border-color: var(--dialog);
+    background-color: var(--dialog-bg);
+}
+
+.switch {
+    border-color: var(--switch);
+    background-color: var(--switch-bg);
+}
+
+.empty-list {
+    display: block;
+    color: #999;
+    font-style: italic;
+}
+
+/* * * * * * * * * * * * * * * * /
+ * Modal windows and popups CSS
+* * * * * * * * * * * * * * * * */
+
+/* Modal Overlay Styles */
+
+.modal-overlay,
+.episodes-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+
+    position: fixed;
+    top: 0;
+    animation: 0.125s linear forwards list-overlay-in;
+}
+
+.modal-overlay {
+    background-color: #000;
+    animation-name: overlay-in;
+    z-index: 5;
+}
+
+.hide-overlay {
+    animation-name: overlay-out;
+}
+
+.hide-episodes-overlay {
+    animation-name: list-overlay-out;
+}
+
+.picked-episode {
+    position: relative;
+    z-index: 1;
+}
+
+/* Modal Window & Notice Styles */
+
+.notifications-container {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.modal,
+.notice {
+    color: var(--light);
+    min-width: 396px;
+    max-width: 108vw;
+
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.88);
+    z-index: 15;
+}
+
+.modal {
+    text-align: center;
+    padding: 48px 68px;
+
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: 0.105s linear forwards modal-in;
+}
+
+.notice {
+    font-size: 17px;
+    min-width: 340px;
+    margin-top: 8px;
+    position: relative;
+    animation: var(--delay) linear forwards notice-in-out;
+}
+
+.notice-body {
+    padding: 24px 44px;
+}
+
+.stats-table {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 1px;
+
+    padding-bottom: 8px;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.stats-table > p:nth-child(4n + 5) {
+    border: 0;
+}
+
+.stats-table > p:nth-last-child(-n + 4) {
+    padding-bottom: 0px;
+}
+
+.stat-element,
+.stat-element-title {
+    text-align: left;
+    padding: 8px 16px;
+    border-right: 1px solid rgba(245, 245, 245, 0.2);
+}
+
+.stat-element.total-elems {
+    grid-column: 1 / 5;
+    margin-bottom: 16px;
+    border: 0;
+}
+
+.stat-element.total-elems,
+.stat-element-title {
+    font-weight: 600;
+    padding: 0px 16px 16px;
+}
+
+.stat-element-title {
+    text-transform: capitalize;
+}
+
+.stat-element span {
+    margin-left: 4px;
+}
+
+.stats-table,
+.info-modal__title,
+.confirm-modal__text {
+    margin-bottom: 28px;
+}
+
+.confirm-modal__title {
+    margin-bottom: 16px;
+}
+
+.notice-timer {
+    width: 100%;
+    height: 3px;
+    border-radius: 3px 0 0 0;
+    animation: var(--delay) linear forwards notice-timer;
+}
+
+.error-notice .notice-timer {
+    background-color: #f86e4c;
+}
+
+.error-notice .notice-text::before {
+    content: "😈 ";
+}
+
+.hide-modal {
+    animation-name: modal-out;
+}
+
+/* * * * * * /
+ * Buttons
+* * * * * * */
+
+.btn {
+    color: var(--btn-font);
+    border: 0;
+}
+
+/* Panel and popups buttons */
+
+.episode-form__add-btn,
+.episode-form__save-btn,
+.episode-form__stats-btn,
+.episode-form__cancel-btn {
+    font-weight: 600;
+    padding: 16px;
+    margin-bottom: 12px;
+    background-color: var(--btn-primary);
+}
+
+.episode-form__add-btn:hover,
+.episode-form__save-btn:hover,
+.episode-form__stats-btn:hover {
+    background-color: var(--btn-primary-hover);
+}
+
+.episode-form__add-btn:active,
+.episode-form__save-btn:active,
+.episode-form__stats-btn:active {
+    background-color: var(--btn-primary-active);
+    transition: all 0.15s;
+}
+
+.episode-form__cancel-btn {
+    background-color: var(--btn-second);
+}
+
+.episode-form__cancel-btn:hover {
+    background-color: var(--btn-second-hover);
+}
+
+.episode-form__cancel-btn:active {
+    background-color: var(--btn-second-active);
+    transition: all 0.15s;
+}
+
+.close-btn,
+.confirm-btn {
+    font-weight: 400;
+    padding: 12px 20px;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.close-btn:hover,
+.confirm-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.confirm-btn {
+    margin-right: 20px;
+}
+
+/* Buttons inside scheme elements */
+
+.list-btns {
+    display: flex;
+    align-self: flex-start;
+    gap: 8px;
+    visibility: hidden;
+}
+
+.episode:hover .list-btns {
+    visibility: visible;
+}
+
+.edit-btn,
+.remove-btn {
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 1px;
+
+    background: url(/assets/images/delete.svg) no-repeat center;
+    background-color: var(--btn-danger);
+    transition: background-color 0.16s;
+}
+
+.edit-btn {
+    background-image: url(/assets/images/edit.svg);
+    background-color: var(--btn-second);
+}
+
+.edit-btn:hover {
+    background-color: var(--btn-second-hover);
+}
+
+.remove-btn:hover {
+    background-color: var(--btn-danger-hover);
+}
+
+.edit-btn:active {
+    background-color: var(--btn-second-active);
+    transition: background-color 0.15s;
+}
+
+.remove-btn:active {
+    background-color: var(--btn-danger-active);
+    transition: background-color 0.15s;
+}
+
+/* To the top button */
+
+.to-top {
+    color: var(--light);
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 4px 4px 2px;
+    border-radius: 2px;
+    background-color: #ccc;
+
+    position: fixed;
+    right: 16px;
+    bottom: -28px;
+
+    transition: all 0.2s;
+    z-index: 999;
+    opacity: 0;
+}
+
+.to-top:hover {
+    background-color: #b8b8b8;
+}
+
+.show-top-btn {
+    bottom: 16px;
+    opacity: 1;
+}
+
+/* * * * * * * /
+ * Animations
+* * * * * * * */
+
+@keyframes overlay-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.165;
+    }
+}
+
+@keyframes overlay-out {
+    from {
+        opacity: 0.165;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes list-overlay-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
+
+@keyframes list-overlay-out {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes modal-in {
+    from {
+        top: 40%;
+        opacity: 0;
+    }
+    to {
+        top: 48%;
+        opacity: 1;
+    }
+}
+
+@keyframes modal-out {
+    from {
+        top: 48%;
+        opacity: 1;
+    }
+    to {
+        top: 40%;
+        opacity: 0;
+    }
+}
+
+@keyframes notice-in-out {
+    0% {
+        opacity: 0;
+        bottom: 0;
+    }
+    5% {
+        opacity: 1;
+        bottom: 16px;
+    }
+    95% {
+        opacity: 1;
+        bottom: 16px;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        bottom: 16px;
+        transform: scale(0);
+    }
+}
+
+@keyframes notice-timer {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+
+/* * * * * * * * /
+ * Media queries
+* * * * * * * * */
+
+/* Laptops */
+
+@media screen and (max-width: 1320px)  {
+    .main {
+        gap: 28px;
+    }
+
+    .to-top {
+        right: 12px;
+    }
+}
+
+@media screen and (min-width: 1025px)  {
+    .episodes-list {
+        flex-basis: 892px;
+        padding-bottom: 64px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px)  {
+    .panel {
+        flex-basis: 320px;
+        min-width: 260px;
+    }
+
+    .episode-form__radio-inputs {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Tablets */
+
+@media screen and (max-width: 1024px)  {
+    .main {
+        flex-direction: column;
+    }
+
+    .panel {
+        padding: 12px 20px 4px;
+        background-color: #fffefd;
+        box-shadow: 0px 2px 6px #d7d7d7;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 5;
+    }
+
+    .episode-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 16px;
+    }
+
+    .episode-form__textarea {
+        grid-row: 1 / 4;
+        min-width: 76px;
+        max-height: 168px;
+    }
+
+    .episode-form__radio-inputs {
+        margin: 12px 0;
+    }
+
+    .episode-form__buttons {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .episode-form__buttons .btn {
+        flex-grow: 1;
+    }
+
+    .radio-label {
+        padding: 6px 12px;
+    }
+
+    textarea {
+        margin-bottom: 12px;
+    }
+
+    input,
+    textarea,
+    .episode-form__buttons .btn {
+        padding: 8px 12px;
+    }
+
+    .form-input-label {
+        display: none;
+    }
+
+    .episodes-list {
+        position: relative;
+        top: 196px;
+        padding-bottom: 28px;
+    }
+
+    .episode__body {
+        flex-basis: 732px;
+    }
+
+    .episode__time {
+        flex-basis: 120px;
+    }
+
+    .modal {
+        padding: 32px 32px;
+    }
+
+    .notice-body {
+        padding: 20px 40px;
+    }
+
+    .confirm-modal {
+        padding: 36px 44px;
+    }
+
+    .info-modal__title {
+        margin-bottom: 32px;
+    }
+
+    .stats-table {
+        margin-bottom: 12px;
+    }
+
+    .confirm-modal__text {
+        margin-bottom: 20px;
+    }
+}
+
+/* Mobiles */
+
+@media screen and (max-width: 728px) {
+    .main {
+        padding: 0 16px;
+    }
+
+    .panel {
+        padding: 12px 16px 4px;
+    }
+
+    .episode-form {
+        gap: 0 12px;
+    }
+
+    .episodes-list {
+        padding-bottom: 20px;
+    }
+
+    .episode {
+        gap: 12px;
+    }
+
+    .list-btns {
+        flex-direction: column;
+        visibility: visible;
+        opacity: 0.5;
+    }
+
+    .episode:hover .list-btns {
+        opacity: 1;
+    }
+
+    .to-top {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .panel {
+        padding: 8px 16px 0;
+    }
+
+    .episode-form__textarea {
+        max-height: unset;
+    }
+
+    .episode-form__radio-inputs {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .episodes-list {
+        top: 208px;
+    }
+
+    .episode {
+        margin-bottom: 16px;
+    }
+
+    .episode__body,
+    .episode__time {
+        padding: 8px 12px;
+    }
+
+    .modal {
+        font-size: 17px;
+    }
+
+    .confirm-modal {
+        padding: 32px 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main {
+        padding: 0 12px;
+    }
+
+    .panel {
+        padding: 8px 12px 0;
+    }
+
+    .episode-form__text-input {
+        max-width: 180px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .episode-form {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 0 8px;
+    }
+
+    .episode {
+        gap: 8px;
+    }
+
+    input,
+    textarea {
+        padding: 8px 12px;
+    }
+
+    .modal {
+        font-size: 16px;
+        min-width: 324px;
+    }
+
+    .notice-body {
+        padding: 20px 36px;
+    }
+
+    .confirm-modal {
+        padding: 24px 36px;
+    }
+
+    .stat-element,
+    .stat-element-title {
+        padding: 8px 12px;
+    }
+
+    .stat-element.total-elems {
+        margin-bottom: 8px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .main {
+        padding: 0 8px;
+    }
+
+    .panel {
+        padding: 8px 8px 0;
+    }
+
+    .notice {
+        min-width: 316px;
+    }
+
+    .notice-body,
+    .confirm-modal {
+        padding: 20px 28px;
+    }
+
+    .stat-element,
+    .stat-element-title {
+        padding: 12px 8px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .info-modal {
+        font-size: 15px;
+    }
+}

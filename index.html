@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg"/>
+    <link rel="stylesheet" href="assets/styles/style.css">
+
+    <title>6D 7N</title>
+</head>
+
+<body>
+    <main class="main">
+        <section class="panel">
+            <form action="#" class="episode-form" name="episode">
+                <textarea
+                    placeholder="Description"
+                    class="episode-form__textarea"
+                    name="description"
+                    cols="30"
+                    rows="6"
+                    id="description"></textarea>
+                <label class="form-input-label" for="description">
+                    Description
+                </label>
+
+                <input
+                    placeholder="Duration in minutes"
+                    class="episode-form__text-input"
+                    type="text"
+                    name="time"
+                    id="time"
+                    maxlength="5">
+                <label class="form-input-label" for="time">
+                    Duration in minutes
+                </label>
+
+                <div class="episode-form__radio-inputs">
+                    <input type="radio" name="episode-type" value="special" id="special">
+                    <label for="special" class="radio-label" id="special-label">
+                        Special
+                    </label>
+
+                    <input type="radio" name="episode-type" value="scene" id="scene">
+                    <label for="scene" class="radio-label" id="scene-label">
+                        Scene
+                    </label>
+
+                    <input type="radio" name="episode-type" value="dialog" id="dialog">
+                    <label for="dialog" class="radio-label" id="dialog-label">
+                        Dialog
+                    </label>
+
+                    <input type="radio" name="episode-type" value="switch" id="switch">
+                    <label for="switch" class="radio-label" id="switch-label">
+                        Switch
+                    </label>
+                </div> <!-- end of div class="episode-form__radio-inputs" -->
+
+                <div class="episode-form__buttons">
+                    <button
+                        type="submit"
+                        class="btn episode-form__add-btn"
+                        id="add-btn">
+                        Add new episode
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn episode-form__stats-btn"
+                        id="stats-btn"
+                        hidden>
+                        Show stats
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn episode-form__save-btn"
+                        id="save-btn"
+                        hidden>
+                        Save
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn episode-form__cancel-btn"
+                        id="cancel-btn"
+                        hidden>
+                        Cancel
+                    </button>
+                </div> <!-- end of div class="episode-form__buttons" -->
+            </form> <!-- end of form class="episode-form" -->
+        </section> <!-- end of section class="panel" -->
+
+        <section class="episodes-list" id="episodes-list"></section>
+
+        <section class="episodes-list default-template" id="empty-list" hidden>
+            <div class="episode empty-list">
+                <div class="episode__body">
+                    <p class="episode__p margin-bottom-16">
+                        Hello, this is another useless app which actually doing almost nothing.
+                    </p>
+
+                    <p class="episode__p margin-bottom-16">
+                        Right now there is no elements here. Create your first one!
+                    </p>
+
+                    <p class="episode__p">
+                        <a href="#" id="demo-link">Or, set up demo content</a>
+                    </p>
+                </div>
+            </div> <!-- end of div class="episode empty-list" -->
+        </section> <!-- end of section class="default-template" -->
+    </main> <!-- end of main class="main" -->
+
+    <a href="#">
+        <div class="to-top" id="to-top"> TO THE TOP </div>
+    </a>
+
+    <script type="module" src="assets/scripts/main.js"></script>
+</body>
+</html>
